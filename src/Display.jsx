@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { selectionSort } from "./Utilities/sortingMethods";
 
 function Display() {
-  const [arr, setArr] = useState([1, 2, 3]);
+  const [arr, setArr] = useState([1, 2, 3, 9, 5, 8, 3, 7, 8, 4]);
 
   function randomizeArray() {
     let tempList = [];
@@ -11,8 +12,14 @@ function Display() {
     setArr(tempList);
   }
 
+  function sort() {
+    let temp = [...arr];
+    selectionSort(temp);
+    setArr(temp);
+  }
+
   useEffect(() => {
-    randomizeArray();
+    // randomizeArray();
   }, []);
 
   return (
@@ -27,10 +34,18 @@ function Display() {
 
       <button
         type="button"
-        className=" mt-16 rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+        className=" mt-16 mx-4 rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
         onClick={() => randomizeArray()}
       >
-        Button text
+        Randomize
+      </button>
+
+      <button
+        type="button"
+        className=" mt-16 rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+        onClick={() => sort()}
+      >
+        Sort
       </button>
     </div>
   );
