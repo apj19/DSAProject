@@ -50,7 +50,7 @@ function Display() {
       <div className="flex  justify-center mt-16">
         {arr.map((v, i) => (
           <div
-            className={`pr-4 ${
+            className={`pr-4  ${
               i <= arrLength ? "text-green-300" : "text-red-300"
             }`}
             key={i}
