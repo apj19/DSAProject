@@ -47,7 +47,7 @@ function Display() {
 
   return (
     <div>
-      <div className="flex  justify-center mt-16  ">
+      <div className="flex  justify-center mt-16      ">
         {arr.map((v, i) => (
           <div
             className={`pr-4  ${
